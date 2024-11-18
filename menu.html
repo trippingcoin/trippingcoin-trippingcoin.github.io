@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YumMenu</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bodyv2">
+    <header>
+        <div class="logo">YumSpot</div>
+        <button class="ebl" type="button" data-theme-toggle aria-label="Change to light theme"> DarkTheme</button>
+        <nav class="navbar">
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="restaurants.html">Restaurants</a></li>
+                <li><a href="reviews.html">Reviews</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="help.html"> Help </a></li>
+                <li><a href="profile.html">Profile</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="menu-container">
+        <div class="datime" id="dateTime"></div>
+        <p class="api" id="weatherMenuItem">Current weather in Astana: Loading...</p>
+
+        <h1 class="h1v2">Menu</h1>
+        
+        <div class="menu-section">
+            <h2>Snack</h2>
+            <div class="menu-item">
+                <span class="menu-item-name">Caesar salad</span>
+                <span class="menu-item-price">3$.</span>
+            </div>
+            <div class="menu-item">
+                <span class="menu-item-name">Soup Tom Yum</span>
+                <span class="menu-item-price">5$.</span>
+            </div>
+        </div>
+
+        <div class="menu-section">
+            <h2>Main courses</h2>
+            <div class="menu-item">
+                <span class="menu-item-name">Stake Ribeye</span>
+                <span class="menu-item-price">15$.</span>
+            </div>
+            <div class="menu-item">
+                <span class="menu-item-name">Spaghetti Carbonara</span>
+                <span class="menu-item-price">6$.</span>
+            </div>
+        </div>
+
+        <div class="menu-section">
+            <h2>Dessert</h2>
+            <div class="menu-item">
+                <span class="menu-item-name">Tiramisu</span>
+                <span class="menu-item-price">2$.</span>
+            </div>
+            <div class="menu-item">
+                <span class="menu-item-name">New York Cheesecake</span>
+                <span class="menu-item-price">3$.</span>
+            </div>
+        </div>
+
+        <div class="menu-section">
+            <h2>Drinks</h2>
+            <div class="menu-item">
+                <span class="menu-item-name">Americano</span>
+                <span class="menu-item-price">1.5$.</span>
+            </div>
+            <div class="menu-item">
+                <span class="menu-item-name">Tea</span>
+                <span class="menu-item-price">1$.</span>
+            </div>
+        </div>
+    </div>
+    <script>
+    //menu/datetime//
+    function displayDateTime() {
+    let now = new Date();
+    let dateTime = now.toLocaleString();
+    document.getElementById('dateTime').innerText = "Menu last updated on: " + dateTime;
+    }
+    displayDateTime();
+
+
+
+    const apiKey = '2e94450d220059c0d9fc59eac87714e5';
+    const city = 'Astana'; 
+
+    const weatherUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+
+    async function updateWeatherInMenu() {
+        try {
+            const response = await fetch(weatherUrl);
+            const data = await response.json();
+            
+            const temperature = data.main.temp; 
+            const description = data.weather[0].description; 
+
+            document.getElementById('weatherMenuItem').textContent = `Current weather in Astana: ${temperature}°C, ${description}`;
+        } catch (error) {
+            console.error("Error fetching weather data:", error);
+            document.getElementById('weatherMenuItem').textContent = 'Error fetching weather data';
+        }
+    }
+
+
+    updateWeatherInMenu();
+
+    </script>
+    <script src="script2.js"></script>
+
+    <footer>
+        <p>&copy; 2024 YumSpot. All rights reserved.</p>
+    </footer>
+</body>
+</html>

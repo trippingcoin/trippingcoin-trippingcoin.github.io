@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YumRest</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- navbar -->
+    <header>
+        <div class="logo">YumSpot</div>
+        <button class="ebl" type="button" data-theme-toggle aria-label="Change to light theme"> DarkTheme</button>
+        <nav class="navbar">
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="restaurants.html">Restaurants</a></li>
+                <li><a href="reviews.html">Reviews</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="help.html"> Help </a></li>
+                <li><a href="profile.html">Profile</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!--restaurants-->
+    <section class="popular-restaurants">
+        <h2>Common Restaurants</h2>
+        <section class="filter-section">
+            <h3 class="feel">Filter Restaurants</h3>     <!-- Filter -->
+            <select id="cuisine-filter">
+                <option value="all">All</option>
+                <option value="italian">Italian</option>
+                <option value="french">French</option>
+                <option value="japanese">Japanese</option>
+            </select>
+        <div class="restaurant-grid">
+            <div class="restaurant-card">
+                <img src="media/italian.jpeg" alt="Restaurant 1">
+                <h3>Restaurant 1</h3>
+                <p>Italian Cuisine</p>
+                <p>Italian cuisine is known for its simplicity, relying on the quality of ingredients. Traditional dishes like pizza,
+                    pasta, and risotto are loved around the world. Olive oil, fresh herbs, tomatoes, and cheeses like mozzarella and
+                    Parmesan are essential to Italian cooking.</p>
+                    <h3> Rate this restaurant:</h3>
+                    <div class="rating-area">     <!-- rating -->
+                        <input type="radio" id="star-1-1" name="rating-restaurant-1" value="5">
+                        <label for="star-1-1" title="Rating 5"></label>
+                        <input type="radio" id="star-2-1" name="rating-restaurant-1" value="4">
+                        <label for="star-2-1" title="Rating 4"></label>
+                        <input type="radio" id="star-3-1" name="rating-restaurant-1" value="3">
+                        <label for="star-3-1" title="Rating 3"></label>
+                        <input type="radio" id="star-4-1" name="rating-restaurant-1" value="2">
+                        <label for="star-4-1" title="Rating 2"></label>
+                        <input type="radio" id="star-5-1" name="rating-restaurant-1" value="1">
+                        <label for="star-5-1" title="Rating 1"></label>
+                    </div>
+            </div>
+            <div class="restaurant-card">
+                <img src="media/french.jpeg" alt="Restaurant 2">
+                <h3>Restaurant 2</h3>
+                <p>French Cuisine</p>
+                <p>French cuisine is famed for its finesse and flavor. It ranges from buttery croissants and delicate pastries to
+                    rich dishes like Coq au Vin and Beef Bourguignon. French cooking techniques have greatly influenced Western culinary
+                    tradition.</p>
+                <h3 class="blya"> Rate this restaurant:</h3>
+                <div class="rating-area2">     <!-- rating -->
+                    <input type="radio" id="star-1-2" name="rating-restaurant-2" value="5">
+                    <label for="star-1-2" title="Rating 5"></label>
+                    <input type="radio" id="star-2-2" name="rating-restaurant-2" value="4">
+                    <label for="star-2-2" title="Rating 4"></label>
+                    <input type="radio" id="star-3-2" name="rating-restaurant-2" value="3">
+                    <label for="star-3-2" title="Rating 3"></label>
+                    <input type="radio" id="star-4-2" name="rating-restaurant-2" value="2">
+                    <label for="star-4-2" title="Rating 2"></label>
+                    <input type="radio" id="star-5-2" name="rating-restaurant-2" value="1">
+                    <label for="star-5-2" title="Rating 1"></label>
+                </div>
+            </div>
+            <div class="restaurant-card">
+                <img src="media/japanese.jpg" alt="Restaurant 3">
+                <h3>Restaurant 3</h3>
+                <p>Japanese Cuisine</p>
+                <p>Japanese cuisine focuses on seasonal ingredients, precision, and presentation. Sushi, ramen, and tempura are some
+                    of the most popular dishes. The cuisine emphasizes the balance of flavors, texture, and fresh ingredients like
+                    fish, rice, and vegetables.</p>
+                    <h3> Rate this restaurant:</h3>
+                    <div class="rating-area3">     <!-- rating -->
+                        <input type="radio" id="star-1-3" name="rating-restaurant-3" value="5">
+                        <label for="star-1-3" title="Rating 5"></label>
+                        <input type="radio" id="star-2-3" name="rating-restaurant-3" value="4">
+                        <label for="star-2-3" title="Rating 4"></label>
+                        <input type="radio" id="star-3-3" name="rating-restaurant-3" value="3">
+                        <label for="star-3-3" title="Rating 3"></label>
+                        <input type="radio" id="star-4-3" name="rating-restaurant-3" value="2">
+                        <label for="star-4-3" title="Rating 2"></label>
+                        <input type="radio" id="star-5-3" name="rating-restaurant-3" value="1">
+                        <label for="star-5-3" title="Rating 1"></label>
+            </div>
+        </div>
+    </section>
+    </section>
+
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 YumSpot. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+    //restaurants/filter//
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterSelect = document.getElementById('cuisine-filter');
+            const restaurantCards = document.querySelectorAll('.restaurant-card');
+        
+            const savedFilter = localStorage.getItem('selectedCuisine');
+            if (savedFilter) {
+                filterSelect.value = savedFilter;
+                applyFilter(savedFilter);
+            }
+        
+            filterSelect.addEventListener('change', function() {
+                const selectedCuisine = this.value;
+                localStorage.setItem('selectedCuisine', selectedCuisine);
+                applyFilter(selectedCuisine);
+            });
+        
+            function applyFilter(cuisine) {
+                restaurantCards.forEach(card => {
+                    const cuisineType = card.querySelector('p').textContent.toLowerCase();
+                    if (cuisine === 'all' || cuisineType.includes(cuisine)) {
+                        card.style.display = 'block'; 
+                    } else {
+                        card.style.display = 'none'; 
+                    }
+                });
+            }
+        });
+        
+    </script>
+
+</body>
+
+</html>

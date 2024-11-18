@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YumProf</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- navbar -->
+    <header>
+        <div class="logo">YumSpot</div>
+        <button class="ebl" type="button" data-theme-toggle aria-label="Change to light theme"> DarkTheme</button>
+        <nav class="navbar">
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="restaurants.html">Restaurants</a></li>
+                <li><a href="reviews.html">Reviews</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="help.html">Help</a></li>
+                <li><a href="login.html">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- profile container -->
+    <div class="profile-container">
+        <img src="media/kaiser.jpg" alt="Profile Photo" class="profile-photo" id="profilePhoto">
+        <div class="profile-info">
+            <h3 class="profinfo">Full name:</h3>
+            <h2 class="profinfo" id="profileName">Michael Kaiser</h2>
+            <h3 class="profinfo">E-mail:</h3>
+            <p class="profinfo" id="profileEmail">kaiser@icloud.com</p>
+            <h3 class="profinfo"> Bio:</h3>
+            <p class="profinfo" id="profileBio">
+                Prodigy U-20 forward from Germany who plays for Bastard München during the Neo Egoist League
+                as the team's ace and main striker. Kaiser is regarded as a genius and is also a member of the New Generation World XI.
+            </p>
+        </div>
+        <button class="edit-btn" onclick="openModal()">Edit Profile</button>
+    </div>
+
+    <!--modal window-->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <h3 class="profinfo">Edit Profile</h3>
+            <label class="enterinfo">Full Name:</label>
+            <input type="text" id="nameInput" placeholder="Name" value="Michael Kaiser">
+            <label class="enterinfo">E-mail:</label>
+            <input type="email" id="emailInput" placeholder="Email" value="kaiser@icloud.com">
+            <label class="enterinfo">Bio:</label>
+            <textarea class="nagi-goatshiro" id="bioInput" placeholder="Short Bio">Prodigy U-20 forward from Germany who plays for Bastard München during the Neo Egoist League as the team's ace and main striker. Kaiser is regarded as a genius and is also a member of the New Generation World XI.</textarea>
+            <button class="save-btn" onclick="saveProfile()">Save</button>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 YumSpot. All rights reserved.</p>
+    </footer>
+    <script src="script3.js"></script>
+</body>
+</html>

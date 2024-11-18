@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YumHome</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<body>
+    <!--navbar-->
+    <header>
+        <div class="logo">YumSpot</div>
+        <button class="ebl" type="button" data-theme-toggle aria-label="Change to light theme"> DarkTheme</button>
+        <nav class="navbar">
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="restaurants.html">Restaurants</a></li>
+                <li><a href="reviews.html">Reviews</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="help.html"> Help </a></li>
+                <li><a href="profile.html">Profile</a></li>
+            </ul>
+        </nav>
+    </header>       
+
+    <!--main-content-->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Find the Best Restaurants & Dishes</h1>
+            <p>Explore top-rated restaurants and dishes from your area</p>
+            <input type="text" placeholder="Search for restaurants or dishes..." class="search-bar">
+        </div>
+    </section>
+
+    <!--restaurants-->
+    <section class="pop-restaurants">
+        <h2>Common Restaurants</h2>
+        <div class="restaurant-grid">
+            <div class="restaurant-card">
+                <img src="media/italian.jpeg" alt="Restaurant 1">
+                <h3>Restaurant 1</h3>
+                <p>Italian Cuisine</p>
+                <p>Italian cuisine is known for its simplicity, relying on the quality of ingredients. Traditional dishes like pizza,
+                    pasta, and risotto are loved around the world. Olive oil, fresh herbs, tomatoes, and cheeses like mozzarella and
+                    Parmesan are essential to Italian cooking.</p>
+            </div>
+            <div class="restaurant-card">
+                <img src="media/french.jpeg" alt="Restaurant 2">
+                <h3>Restaurant 2</h3>
+                <p>French Cuisine</p>
+                <p>French cuisine is famed for its finesse and flavor. It ranges from buttery croissants and delicate pastries to
+                    rich dishes like Coq au Vin and Beef Bourguignon. French cooking techniques have greatly influenced Western culinary
+                    tradition.</p>
+            </div>
+            <div class="restaurant-card">
+                <img src="media/japanese.jpg" alt="Restaurant 3">
+                <h3>Restaurant 3</h3>
+                <p>Japanese Cuisine</p>
+                <p>Japanese cuisine focuses on seasonal ingredients, precision, and presentation. Sushi, ramen, and tempura are some
+                    of the most popular dishes. The cuisine emphasizes the balance of flavors, texture, and fresh ingredients like
+                    fish, rice, and vegetables.</p>
+            </div>
+        </div>
+    </section>
+
+    <button class="goatsagi" onclick="changeBackground()">Change Backgroud Photo</button> <!--bg changing button-->
+
+    <button class="goatsagi"id="openPopupButton">Subscribe Now</button> <!--suibscribe popup opener-->
+    
+    <!--popup form-->
+    <div id="popupForm" class="popup-form">
+        <div class="popup-content">
+            <span class="close-btn" id="closePopup">&times;</span>
+            <h2>Subscribe to Our Instagram</h2>
+            <form id="subscriptionForm">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                <button type="submit">Subscribe</button>
+            </form>
+        </div>
+    </div>
+   
+    <!--footer-->
+    <footer>
+        <p>&copy; 2024 YumSpot. All rights reserved.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YumLog</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+<!--navbar-->
+    <header>
+        <div class="logo">YumSpot</div>
+        <button class="ebl" type="button" data-theme-toggle aria-label="Change to light theme"> DarkTheme</button>
+        <nav class="navbar">
+            <ul class="nav-links">
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="sae">
+        <div class="login-form">
+            <h2 class="profinfo">Login</h2>
+            <form action="index.html" method="get">
+                <label class="profinfo" for="username">Email:</label>
+                <input type="text" id="email" name="email" required>
+        
+                <label class="profinfo" for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+                <button type="submit" class="log" id="sound-button"><a href="index.html"> Login </a></button>
+                <audio id="click-sound" src="media/loginaudio.mp3" preload="auto"></audio>
+            </form>
+        </div>
+    </section>
+
+    <script src="script3.js"></script>
+</body>
+
+</html>

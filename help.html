@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YumHelp</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">YumSpot</div>
+        <button class="ebl" type="button" data-theme-toggle aria-label="Change to light theme"> DarkTheme</button>
+        <nav class="navbar">
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="restaurants.html">Restaurants</a></li>
+                <li><a href="reviews.html">Reviews</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="help.html"> Help </a></li>
+                <li><a href="profile.html">Profile</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <div class="container">
+        <h1 class="faq-question">Help</h1>
+
+        <div class="faq-item">
+            <h2 class="faq-question">How to place an order?</h2>
+            <div class="faq-answer">
+                <p>To place an order, go to the "Menu" section on our website and select the dishes that you like. Next, follow the onscreen instructions to complete your order.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <h2 class="faq-question">How to contact us?</h2>
+            <div class="faq-answer">
+                <p>You can contact us by email at info@yumspot.com or by filling out the contact form below.</p>
+            </div>
+        </div>
+
+        <div class="contact-form">
+            <h2 class="faq-question">Write to us</h2>
+            <form action="submit_form.php" method="post">
+                <label for="name">Your name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Your email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="message">Ask your question:</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+
+                <button id="sound-button" type="submit">Send</button>
+            </form>
+        </div>
+    </div>
+    <audio id="click-sound" src="media/helpaidio.mp3" preload="auto"></audio>
+    
+    <script src="script2.js"></script>
+    
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 YumSpot. All rights reserved.</p>
+    </footer>
+</body>
+</html>
